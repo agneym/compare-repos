@@ -3,14 +3,14 @@ const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: "./src/index.ts",
+  entry: "./src/index.js",
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
     publicPath: "/"
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".js"]
   },
   module: {
     rules: [
@@ -30,9 +30,10 @@ const config = {
         loader: "html-loader"
       },
       {
-        test: /.ts?$/,
+        test: /.js?$/,
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "ts-loader"
+          loader: "babel-loader"
         },
         exclude: /(node_modules|dist|build-utils|webpack.config.js)/
       }

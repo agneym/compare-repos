@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "env"
+  ],
+  "ignore": [
+    "/node_modules/",
+    "/build-utils/",
+    "/dist/"
+  ]
+}
