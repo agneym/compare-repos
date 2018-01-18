@@ -15,7 +15,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
         use: [
           {
@@ -26,6 +26,9 @@ const config = {
             options: {
               importLoaders: 1
             }
+          },
+          {
+            loader: "sass-loader"
           }
         ]
       }
