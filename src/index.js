@@ -2,6 +2,9 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons'
 import Chart from 'chart.js';
 import './index.scss';
+import './api';
+
+
 
 UIkit.use(Icons);
 
@@ -34,5 +37,3 @@ new Chart(ctx, {
     }
   }
 });
-
-console.log("Done");

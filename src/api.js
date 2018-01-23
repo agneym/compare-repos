@@ -13,3 +13,7 @@ function getInfo(package) {
   .then(res=>res)
   .catch(err=>err);
 }
+
+export default {
+  getInfo
+}
