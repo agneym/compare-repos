@@ -18,7 +18,10 @@ getData('facebook/react')
   })
   .then(()=>prepareForGraph(first, second));
 
-const ctx = document.getElementById("chart");
+function prepareForGraph(firstPackage, secondPackage) {
+  const evaluatingFactor = 'stargazers_count';
+  drawGraph(evaluatingFactor, 'facebook/react', 'react/react-redux', firstPackage[evaluatingFactor], secondPackage[evaluatingFactor]);
+}
 new Chart(ctx, {
   type: 'bar',
   data: {
