@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Repo Compare</title>
   <link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.min.css">
 </head>
+
 <body>
   <div class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-center">
@@ -15,10 +17,35 @@
       </a>
     </div>
   </div>
+  <section>
+    <form class="uk-grid-small uk-form-stacked input-section" uk-grid id="input-form">
+      <div>
+        <label class="uk-form-label">First Package</label>
+        <input class="uk-input" type="text" placeholder="Package 1" id="package1">
+      </div>
+      <div>
+        <label class="uk-form-label">Second Package</label>
+        <input class="uk-input" type="text" placeholder="Package 2" id="package2">
+      </div>
+      <div>
+        <label class="uk-form-label">Evaluating Factor</label>
+        <select name="evaluating-factor" id="factor" class="uk-input">
+          <option value="stargazers_count">Stars</option>
+          <option value="watchers">Watchers</option>
+          <option value="forks">Forks</option>
+          <option value="open_issues_count">Open Issues</option>
+        </select>
+      </div>
+      <div>
+        <button class="uk-button uk-button-primary uk-margin-top" type="submit">Plot</button>
+      </div>
+    </form>
+  </section>
   <section class="uk-background-default">
     <div class="chart-container uk-margin-auto uk-margin-large-top" style="position: relative; height:40vh; width:80vw">
       <canvas id="chart"></canvas>
     </div>
   </section>
 </body>
+
 </html>
