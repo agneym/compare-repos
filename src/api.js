@@ -9,7 +9,7 @@ function getInfo(packageName) {
 }
 
 function mockEndPoint() {
-  return {
+  return new Promise((resolve, reject)=>resolve({
     "total_count": 403,
     "incomplete_results": false,
     "items": [
@@ -111,8 +111,7 @@ function mockEndPoint() {
         "score": 58.003983
       }
     ]
-  }
-
+  }));
 }
 
 export default {
