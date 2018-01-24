@@ -6,7 +6,8 @@ import api from './api';
 
 UIkit.use(Icons);
 
-const ctx = document.getElementById("chart");
+const chartContainer = document.getElementById("chart-container");
+const spinner = document.getElementsByClassName('spinner-container')[0];
 
 function getData(packageName) {
   return api.getInfo(packageName);
@@ -14,6 +15,8 @@ function getData(packageName) {
 
 function getInput(event) {
   event.preventDefault();
+  chartContainer.classList.add('hidden');
+  spinner.classList.remove('hidden');
   const package1 = document.querySelector('#package1').value;
   const package2 = document.querySelector('#package2').value;
   const factor = document.querySelector('#factor').value;
@@ -26,7 +29,6 @@ function getInput(event) {
     })
     .then(()=>getData(package2))
     .then(res => {
-      console.log(package2, res.items[0]);
       secondData = res.items[0];
       return res;
     })
@@ -34,11 +36,13 @@ function getInput(event) {
 }
 
 function prepareForGraph(data1, data2, name1, name2, factor) {
-  console.log(data1, data2);
+  spinner.classList.add('hidden');
+  chartContainer.classList.remove('hidden');
   drawGraph(factor, name1, name2, data1[factor], data2[factor]);
 }
 
 function drawGraph(factor, label1, label2, value1, value2) {
+  const ctx = document.getElementById("chart");
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -72,4 +76,5 @@ function drawGraph(factor, label1, label2, value1, value2) {
 (function(){
   const form = document.querySelector('#input-form');
   form.addEventListener('submit', getInput);
+  chartContainer.classList.add('hidden');
 })();

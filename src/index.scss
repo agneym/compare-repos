@@ -7,3 +7,26 @@
   height: 5rem;
   flex-direction: column;
 }
+
+.chart-container {
+  position: relative; 
+  height: 40vh; 
+  width: 80vw;
+  text-align: center;
+}
+
+.logo {
+  letter-spacing: 5px;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 60vh;
+}
+
+.hidden {
+  display: none !important;
+}

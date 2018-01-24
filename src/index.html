@@ -12,8 +12,8 @@
 <body>
   <div class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-center">
-      <a href="" class="uk-navbar-item uk-logo">
-        Logo
+      <a href="" class="uk-navbar-item uk-logo logo">
+        COMPARE REPOS
       </a>
     </div>
   </div>
@@ -21,19 +21,19 @@
     <form class="uk-grid-small uk-form-stacked input-section" uk-grid id="input-form">
       <div>
         <label class="uk-form-label">First Package</label>
-        <input class="uk-input" type="text" placeholder="Package 1" id="package1">
+        <input class="uk-input" type="text" placeholder="Package 1" id="package1" required>
       </div>
       <div>
         <label class="uk-form-label">Second Package</label>
-        <input class="uk-input" type="text" placeholder="Package 2" id="package2">
+        <input class="uk-input" type="text" placeholder="Package 2" id="package2" required>
       </div>
       <div>
         <label class="uk-form-label">Evaluating Factor</label>
-        <select name="evaluating-factor" id="factor" class="uk-input">
+        <select name="evaluating-factor" id="factor" class="uk-input" required>
           <option value="stargazers_count">Stars</option>
           <option value="watchers">Watchers</option>
           <option value="forks">Forks</option>
-          <option value="open_issues_count">Open Issues</option>
+          <option value="open_issues">Open Issues</option>
         </select>
       </div>
       <div>
@@ -42,8 +42,11 @@
     </form>
   </section>
   <section class="uk-background-default">
-    <div class="chart-container uk-margin-auto uk-margin-large-top" style="position: relative; height:40vh; width:80vw">
+    <div class="chart-container uk-margin-auto uk-margin-large-top" id="chart-container">
       <canvas id="chart"></canvas>
+    </div>
+    <div class="chart-container spinner-container hidden">
+      <div uk-spinner></div>
     </div>
   </section>
 </body>
