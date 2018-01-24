@@ -6,7 +6,17 @@ import './api';
 
 
 
-UIkit.use(Icons);
+getData('facebook/react')
+  .then(res=>{
+    first = res.items[0];
+    return res;
+  })
+  .then(getData('react/react-redux'))
+  .then(res=>{
+    second = res.items[0];
+    return res;
+  })
+  .then(()=>prepareForGraph(first, second));
 
 const ctx = document.getElementById("chart");
 new Chart(ctx, {
