@@ -1,5 +1,6 @@
 import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons'
+import Icons from 'uikit/dist/js/uikit-icons';
+import './uikit.min.css';
 import Chart from 'chart.js';
 import './index.scss';
 import api from './api';
