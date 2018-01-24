@@ -9,27 +9,33 @@ UIkit.use(Icons);
 const ctx = document.getElementById("chart");
 
 function getData(packageName) {
-  return api.mockEndPoint(packageName)
+  return api.getInfo(packageName);
 }
 
-let first = [];
-let second = [];
+function getInput(event) {
+  event.preventDefault();
+  const package1 = document.querySelector('#package1').value;
+  const package2 = document.querySelector('#package2').value;
+  const factor = document.querySelector('#factor').value;
+  let firstData = [];
+  let secondData = [];
+  getData(package1)
+    .then(res => {
+      firstData = res.items[0];
+      return res;
+    })
+    .then(()=>getData(package2))
+    .then(res => {
+      console.log(package2, res.items[0]);
+      secondData = res.items[0];
+      return res;
+    })
+    .then(() => prepareForGraph(firstData, secondData, package1, package2, factor));
+}
 
-getData('facebook/react')
-  .then(res=>{
-    first = res.items[0];
-    return res;
-  })
-  .then(getData('react/react-redux'))
-  .then(res=>{
-    second = res.items[0];
-    return res;
-  })
-  .then(()=>prepareForGraph(first, second));
-
-function prepareForGraph(firstPackage, secondPackage) {
-  const evaluatingFactor = 'stargazers_count';
-  drawGraph(evaluatingFactor, 'facebook/react', 'react/react-redux', firstPackage[evaluatingFactor], secondPackage[evaluatingFactor]);
+function prepareForGraph(data1, data2, name1, name2, factor) {
+  console.log(data1, data2);
+  drawGraph(factor, name1, name2, data1[factor], data2[factor]);
 }
 
 function drawGraph(factor, label1, label2, value1, value2) {
@@ -62,3 +68,8 @@ function drawGraph(factor, label1, label2, value1, value2) {
     }
   });
 }
+
+(function(){
+  const form = document.querySelector('#input-form');
+  form.addEventListener('submit', getInput);
+})();
