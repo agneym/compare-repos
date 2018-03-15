@@ -8,10 +8,10 @@
   flex-direction: column;
 }
 
-.chart-container {
+.chart-container, .details-container {
   position: relative; 
   width: 80vw;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .logo {
