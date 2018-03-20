@@ -17,9 +17,7 @@ function insertIntoTable(table, heading1, heading2, data1, data2, name1, name2) 
       <td>Table Data</td>
     </tr>
   `;
-  heading1.textContent = name1;
-  heading2.textContent = name2;
-  console.log(data1, data2);
+  console.log(data1, data2, name1);
 }
 
 export default insertIntoTable;
