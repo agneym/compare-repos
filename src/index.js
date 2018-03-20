@@ -51,7 +51,7 @@ function prepareForTable(data1, data2, name1, name2) {
   const package1Heading = document.getElementById('package1-table');
   const package2Heading = document.getElementById('package2-table');
   const table = document.getElementById('content-body');
-  insertIntoTable(table, package1Heading, package2Heading, data1.items[0], data2.items[0], name1, name2);
+  insertIntoTable(table, package1Heading, package2Heading, data1, data2, name1, name2);
 }
 
 (function(){
