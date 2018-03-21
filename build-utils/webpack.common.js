@@ -4,11 +4,6 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: "./src/index.js",
-  output: {
-    filename: "[hash].bundle.js",
-    path: commonPaths.outputPath,
-    publicPath: "./"
-  },
   resolve: {
     extensions: [".js"]
   },

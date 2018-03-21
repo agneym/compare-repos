@@ -3,6 +3,11 @@ const commonPaths = require("./common-paths");
 
 const config = {
   devtool: "inline-source-map",
+  output: {
+    filename: "[hash].bundle.js",
+    path: commonPaths.outputPath,
+    publicPath: "/"
+  },
   devServer: {
     port: 3000,
     open: true,

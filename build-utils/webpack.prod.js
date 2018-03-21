@@ -11,6 +11,11 @@ const PurifyCSSPlugin = require("purifycss-webpack");
 
 module.exports = {
   devtool: "source-map",
+  output: {
+    filename: "[hash].bundle.js",
+    path: commonPaths.outputPath,
+    publicPath: "/"
+  },
   module: {
     rules: [
       {
