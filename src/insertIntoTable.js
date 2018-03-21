@@ -9,6 +9,8 @@ function prepareColumn(text) {
 function prepareRow(comparison, data1, data2) {
   const row = document.createElement('tr');
   const header = prepareColumn(comparison.header);
+  data1 = comparison.applyFn?comparison.applyFn(data1):data1;
+  data2 = comparison.applyFn ? comparison.applyFn(data2) : data2;
   const column1 = prepareColumn(data1);
   const column2 = prepareColumn(data2);
   row.appendChild(header);

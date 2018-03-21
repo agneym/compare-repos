@@ -1,3 +1,5 @@
+import {distanceInWordsToNow} from 'date-fns';
+
 export default [
   {
     name: 'name',
@@ -12,7 +14,8 @@ export default [
   {
     name: 'created_at',
     link: null,
-    header: 'Created At'
+    header: 'Created At',
+    applyFn: (date)=>distanceInWordsToNow(new Date(date))
   },
   {
     name: 'homepage',
