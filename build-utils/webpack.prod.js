@@ -11,13 +11,6 @@ const PurifyCSSPlugin = require("purifycss-webpack");
 
 module.exports = {
   devtool: "source-map",
-  devServer: {
-    contentBase: commonPaths.outputPath,
-    port: 3000,
-    host: "0.0.0.0",
-    useLocalIp: true,
-    compress: true
-  },
   module: {
     rules: [
       {

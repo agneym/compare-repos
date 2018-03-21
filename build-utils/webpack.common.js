@@ -7,7 +7,7 @@ const config = {
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
-    publicPath: "/"
+    publicPath: "./"
   },
   resolve: {
     extensions: [".js"]
