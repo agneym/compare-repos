@@ -1,8 +1,16 @@
 import comparisons from './Comparisons';
 
-function prepareColumn(text) {
+function prepareColumn(text, link) {
   const column = document.createElement('td');
-  column.textContent = text;
+  const linkText = document.createTextNode(text);
+  if(link) {
+    const anchor = document.createElement('a');
+    anchor.href = link;
+    anchor.appendChild(linkText);
+    column.appendChild(anchor);
+  } else {
+    column.appendChild(linkText);
+  }
   return column;
 }
 
@@ -11,8 +19,8 @@ function prepareRow(comparison, data1, data2) {
   const header = prepareColumn(comparison.header);
   data1 = comparison.applyFn?comparison.applyFn(data1):data1;
   data2 = comparison.applyFn ? comparison.applyFn(data2) : data2;
-  const column1 = prepareColumn(data1);
-  const column2 = prepareColumn(data2);
+  const column1 = prepareColumn(data1, comparison.link);
+  const column2 = prepareColumn(data2, comparison.link);
   row.appendChild(header);
   row.appendChild(column1);
   row.appendChild(column2);

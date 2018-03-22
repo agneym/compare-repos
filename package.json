@@ -1,7 +1,7 @@
 {
-  "name": "typescript-starter",
+  "name": "compare-repos",
   "version": "1.0.0",
-  "description": "Minimal Typescript Frontend Starter",
+  "description": "Compare two github repositories across parameters.",
   "main": "src/index.js",
   "private": true,
   "scripts": {
