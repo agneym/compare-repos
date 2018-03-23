@@ -14,7 +14,7 @@ module.exports = {
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
-    publicPath: "/"
+    publicPath: "./"
   },
   module: {
     rules: [
