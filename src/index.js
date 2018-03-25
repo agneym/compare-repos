@@ -2,7 +2,7 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import './uikit.min.css';
 import Graph from './Graph.js';
-import insertIntoTable from './insertIntoTable';
+import insertIntoTable from './table';
 import './index.scss';
 import api from './api';
 
